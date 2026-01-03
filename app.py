@@ -35,7 +35,7 @@ def webhook():
    #  message='Resposta Automática :)', )
 
     payload = {
-    'number': 244938381478,
+    'number': '244938381478',
     'text': 'KomunhãoDigital!',
     # 'delay': 10000, # simular "digitando"
 }
@@ -54,6 +54,7 @@ def webhook():
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
+
 
 
 
