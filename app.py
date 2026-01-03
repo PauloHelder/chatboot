@@ -1,9 +1,18 @@
 from flask import Flask, request, jsonify
 
-from services.waha import Waha
+#from services.waha import Waha
+BASE_URL = 'https://chatboot-production-9029.up.railway.app/chatbot/webhook/'
+INSTANCE_NAME = 'kdigital'
+EVOLUTION_AUTHENTICATION_API_KEY = 'Php.123#321@'
+
+headers = {
+    'apikey': EVOLUTION_AUTHENTICATION_API_KEY,
+    'Content-Type': 'application/json'
+}
 
 
 app = Flask(__name__)
+
 
 @app.route('/chatbot/webhook/', methods=['GET'])
 def getall():
@@ -15,16 +24,31 @@ def webhook():
 
     print(f'EVENTO RECEBIDO: {data}')
 
-    waha = Waha()
+   # waha = Waha()
 
-    chat_id = data['payload']['from']
-    waha.send_message(
-        chat_id=chat_id,
-        message='Resposta Automática :)',
-    )
+   #chat_id = data['payload']['from']
+   #waha.send_message(
+   #    chat_id=chat_id,
+   #  message='Resposta Automática :)', )
+
+    payload = {
+    'number': '244938381478',
+    'text': 'KomunhãoDigital!',
+    # 'delay': 10000, # simular "digitando"
+}
+    response = requests.post(
+    url=f'{BASE_URL}/message/sendText/{INSTANCE_NAME}',
+    json=payload,
+    headers=headers,
+)
+    print(response.json())
+
+
+    
 
     return jsonify({'status': 'success'}), 200
 
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
+
