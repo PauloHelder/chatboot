@@ -36,7 +36,7 @@ def webhook():
     'text': 'KomunhãoDigital!',
     # 'delay': 10000, # simular "digitando"
 }
-    response = requests.post(
+    response = request.post(
     url=f'{BASE_URL}/message/sendText/{INSTANCE_NAME}',
     json=payload,
     headers=headers,
@@ -51,6 +51,7 @@ def webhook():
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
+
 
 
 
