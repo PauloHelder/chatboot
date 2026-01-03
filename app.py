@@ -25,7 +25,7 @@ def webhook():
 
    # number = data['data']['key']['remoteJid']
 
-    print(f'EVENTO RECEBIDO: {data}')
+   print(f'EVENTO RECEBIDO: {data}')
 
    # waha = Waha()
 
@@ -44,7 +44,7 @@ def webhook():
     json=payload,
     headers=headers,
 )
-  print(response.json())
+#  print(response.json())
 
 
     
@@ -54,6 +54,7 @@ def webhook():
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
+
 
 
 
