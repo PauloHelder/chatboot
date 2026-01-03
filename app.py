@@ -14,11 +14,11 @@ headers = {
 app = Flask(__name__)
 
 
-@app.route('/chatbot/webhook/', methods=['GET'])
+@app.route('/chatbot/webhook', methods=['GET'])
 def getall():
     return jsonify({'status': 'success'}), 200
 
-@app.route('/chatbot/webhook/', methods=['POST'])
+@app.route('/chatbot/webhook/messages-upsert', methods=['POST'])
 def webhook():
     data = request.json
 
@@ -51,6 +51,7 @@ def webhook():
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
+
 
 
 
