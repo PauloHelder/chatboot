@@ -23,7 +23,7 @@ def getall():
 def webhook():
     data = request.json
 
-    number = data['data']['key']['remoteJid']
+   # number = data['data']['key']['remoteJid']
 
     print(f'EVENTO RECEBIDO: {data}')
 
@@ -35,7 +35,7 @@ def webhook():
    #  message='Resposta Automática :)', )
 
     payload = {
-    'number': number,
+    'number': 244938381478,
     'text': 'KomunhãoDigital!',
     # 'delay': 10000, # simular "digitando"
 }
@@ -44,7 +44,7 @@ def webhook():
     json=payload,
     headers=headers,
 )
-    print(response.json())
+  #  print(response.json())
 
 
     
@@ -54,6 +54,7 @@ def webhook():
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
+
 
 
 
