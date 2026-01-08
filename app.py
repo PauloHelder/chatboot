@@ -24,7 +24,7 @@ def getall():
 def webhook():
     data = request.json
 
-    number = data['data']['remoteJid']
+    number = data['data']['key']['remoteJid']
     #number = '244973967181'
     print(f'EVENTO RECEBIDO: {data}')
 
@@ -55,6 +55,7 @@ def webhook():
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
+
 
 
 
