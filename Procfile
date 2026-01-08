@@ -3,9 +3,9 @@
 ENV PORT=8080
 
 # Comando para rodar (exemplo com FastAPI/Uvicorn)
-# IMPORTANTE: --host 0.0.0.0 e --port $PORT
+# IMPORTANTE: --host 0.0.0.0 e 
 # CMD uvicorn main:app 
 
 
 
-web: gunicorn app:app --host 0.0.0.0 --port 5000
+web: gunicorn app:app --host 0.0.0.0 --port $PORT
