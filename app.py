@@ -2,8 +2,8 @@ import requests
 from flask import Flask, request, jsonify
 
 #from services.waha import Waha
-#BASE_URL = 'https://diligent-abundance-production.up.railway.app'
-BASE_URL = 'https://evolution-api-production-e345.up.railway.app'
+BASE_URL = 'https://diligent-abundance-production.up.railway.app'
+#BASE_URL = 'https://evolution-api-production-e345.up.railway.app'
 INSTANCE_NAME = 'kdigital'
 EVOLUTION_AUTHENTICATION_API_KEY = 'Php.123#321@'
 
@@ -55,6 +55,7 @@ def webhook():
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
+
 
 
 
