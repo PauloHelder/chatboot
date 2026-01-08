@@ -22,7 +22,7 @@ def getall():
 
 @app.route('/chatbot/webhook/messages-upsert', methods=['POST'])
 def webhook():
-    data = requests.json
+    data = request.json
 
     #number = data['data']['pushName']
     number = '244973967181'
@@ -55,6 +55,7 @@ def webhook():
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
+
 
 
 
