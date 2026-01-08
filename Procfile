@@ -1,6 +1,6 @@
 # O Railway define a variável PORT automaticamente, 
 # mas é bom garantir que seu app a leia.
-ENV PORT=5000
+#ENV PORT=5000
 
 # Comando para rodar (exemplo com FastAPI/Uvicorn)
 # IMPORTANTE: --host 0.0.0.0 e 
@@ -8,4 +8,4 @@ ENV PORT=5000
 
 
 
-web: gunicorn app:app --host 0.0.0.0 --port $PORT
+web: gunicorn app:app 
